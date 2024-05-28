@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="./src/input.css" rel="stylesheet">
     <link href="./src/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="./src/product.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 
 </head>
 
@@ -13,7 +17,12 @@
 
     <header class="flex bg-[#622C05] w-[210vh] h-[9vh] self-center">
 
-        <img src="./src/img/logo.png" alt="logo">
+        <a href="./home.html">
+
+            <img src="./src/img/logo.png" alt="logo">
+            
+        </a>
+        
 
         <h1 class="self-center translate-x-10 font-medium text-2xl text-[#FDEDD5]">
 
@@ -26,178 +35,27 @@
 
     <div class="flex">
 
- 
 
-<div class="h-screen w-screen bg-[#FDEDD5] flex p-10 space-y-10 self-center">
 
-    <nav class="h-48 w-24 bg-[#622c0574] fixed z-20 flex rounded-3xl items-center self-center">
-        <div class="space-y-10">
-            <img src="./src/img/burguer (2).png" alt="pic">
-            <img src="./src/img/drink (1).png" alt="pic">
-            <img src="./src/img/sobremesas.png" alt="pic">
-            <img src="./src/img/bebidas.png" alt="pic">
+        <div class="h-screen w-screen bg-[#FDEDD5] grid p-10 space-y-10 self-center">
+
+            <nav class=" bg-[#622c056b] fixed flex rounded-3xl items-center nav z-10 self-center space-x-20">
+                    <img src="./src/img/burguer (2).png" alt="pic">
+                    <img src="./src/img/drink (1).png" alt="pic">
+                    <img src="./src/img/sobremesas.png" alt="pic">
+                    <img src="./src/img/bebidas.png" alt="pic">
+
+            </nav>
+
+            <!-- card lanche -->
+            <div class="product-box">
+                <img src="./src/img/lanche1.png" alt="pic" class="product-pic">
+                <h1 class="product-name">X bancon</h1>
+            </div>
+
         </div>
 
-    </nav>
-
-    <!-- DIV GERAL CARDAPIO -->
- 
-     <!-- CONTEÚDO PRINCIPAL -->
-     <main class="flex-grow bg-[#FDEDD5] p-10 flex items-center justify-center">
-        <div class="grid grid-cols-5 gap-4">
-            <!-- Repetir os cards para preencher 5 colunas e 3 linhas -->
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <!-- Repita o bloco acima para um total de 15 cards -->
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-            <div class="bg-white p-4 rounded-lg shadow-md">
-                <button>
-                    <div class="flex flex-col items-center">
-                        <img src="./src/img/lanche1.png" alt="imagem do card" class="h-36 w-36">
-                        <article>
-                            <h1 class="text-center font-bold text-[#622C05]">
-                                X-bacon
-                            </h1>
-                        </article>
-                    </div>
-                </button>
-            </div>
-
-</div>
 
 
-    </div>
-
-
-   
 
 </body>
