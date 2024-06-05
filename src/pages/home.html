@@ -4,73 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../input.css" rel="stylesheet" >
+    <title>Sua Página Inicial</title>
+    <link href="../homeprodutos.css" rel="stylesheet">
+    <link href="../input.css" rel="stylesheet">
     <link href="../output.css" rel="stylesheet">
-   
+    <link rel="stylesheet" href="popup.css">
+    <script defer src="../js/homeprodutos.js"></script>
 </head>
 
-<body class="bg-[#FDEDD5] overflow-x-hidden">
+<body class="bg-[#ffeed3] overflow-x-hidden">
 
-    <header class="flex bg-[#622c05] w-[210vh] h-[9vh] self-center">
-
-
+    <header class="flex bg-[#622c05] w-full h-[9vh] items-center">
         <!-- img de logo barra superior -->
-        <img class="size-16" style="transform: translate(10px); align-self: center;" src="../img/logo.png"
-            alt="logo">
+        <img class="size-16 ml-2" src="../img/logo.png" alt="logo">
 
+        <nav class="flex-1 flex justify-around">
+            <a href="../pages/cardapio.html" class="text-white font-bold">Cardápio</a>
+            <a href="../pages/quemsomos.html" class="text-white font-bold">Quem somos</a>
+            <a href="../pages/promocoes.html" class="text-white font-bold">Promoções</a>
+            <a href="../pages/pedidos.html" class="text-white font-bold">Seus Pedidos</a>
+        </nav>
 
-        <button>
-            <a href="../pages/cardapio.html">
-                <div class="flex items-center justify-center text-white font-bold w-[10vw]"
-                    style="transform: translate(120px);">
-                    Cardápio
-                </div>
-            </a>
-
-        </button>
-        <button>
-            <a href="../pages/quemsomos.html">
-                <div class="flex items-center justify-center text-white font-bold w-[10vw]"
-                    style="transform: translate(360px);">
-                    Quem somos
-                </div>
-            </a>
-        </button>
-        <button>
-            <a href="../pages/promocoes.html">
-                <div class="flex items-center justify-center text-white font-bold w-[10vw]"
-                    style="transform: translate(650px);">
-                    Promoções
-                </div>
-            </a>
-
-        </button>
-
-        <button>
-            <a href="../pages/pedidos.html">
-                <div class="flex items-center justify-center text-white font-bold w-[10vw]"
-                    style="transform: translate(900px);">
-                    Seus Pedidos
-                </div>
-            </a>
-
-        </button>
-
-        <div class="flex items-center justify-center place-content-end" style="transform: translate(996px);">
-            <button>
-                <a href="../pages/login.html">
-                    <img src="../img/perfil.png" alt="foto-perfil">
-                </a>
-
-            </button>
+        <a href="../pages/login.html">
+            <img class="mr-4" src="../img/perfil.png" alt="foto-perfil">
+        </a>
     </header>
 
     <!-- banner de promoções -->
-    <div class="bg-[#3B1C05] h-52 w-[210vh] flex items-stretch">
-
+    <div class="bg-[#3B1C05] h-52 w-full flex items-stretch">
         <!-- img do lanche da promoção -->
-        <img class=" translate-x-6 opacity-50" src="../img/lanche bannner.png" alt="lanche do baner de promoção">
-
+        <img class="translate-x-6 opacity-50" src="../img/lanche bannner.png" alt="lanche do baner de promoção">
         <!-- textos do banner de promoção -->
         <article class="py-10">
             <h1 class="text-[#9C7E50] font-extrabold text-5xl translate-x-16">
@@ -89,86 +52,34 @@
 
     </div>
 
- <div class="">
-            <h1 class=" text-[#622C05] font-extrabold translate-x-10 text-[20px] translate-y-3 ">
-            NOVIDADES
-        </h1>
-        </div>
+    <div class="mt-8">
+        <h1 class="text-[#622C05] font-extrabold text-[20px] translate-x-10">NOVIDADES</h1>
+    </div>
 
-           
-    <div class="space-y-24 ">
-       
-        <!-- DIV QUE GUARDA TODOS OS CARDS NOVIDADES -->
-        <div class=" h-52 translate-y-7 space-x-12">
-            
-            <!-- cards -->
-    
-            <!-- lanche 1 -->
+    <div class="flex flex-wrap justify-center space-x-12 mt-4" id="novidades">
+        <!-- Cards de novidades vão ser inseridos aqui -->
+    </div>
 
-            <a href="./det.Produtos.html">
-                <button>
-                    <div class="size-36 translate-x-7">
-       
-                   <img src="../img/lanche1.png" alt="imagem do card">
-       
-                   <article>
-                       <h1 class="text-center font-bold text-[#622C05]">
-                           X-bancon
-                       </h1>
-                       <p class="text-[11px] text-center font-medium gap-2 text-[#622c0599]">
-                           Três hamburgueres bovinos (150g) em pão brioche tostado na manteiga, fatias crocantes de bacon e molho especial da casa.
-                       </p>
-                       <p class="text-[13px] text-center font-bold text-[#622C05]">
-                           R$ 49,50
-                       </p>
-                   </article>
-       
-               </div>
-               </button>
+    <div class="mt-8">
+        <h1 class="text-[#622C05] font-extrabold text-[20px] translate-x-10">FAVORITOS</h1>
+    </div>
 
-            </a>
-          
-        
-        </div>
-    
+    <div class="flex flex-wrap justify-center space-x-12 mt-4" id="favoritos">
+        <!-- Cards de favoritos serão inseridos aqui -->
+    </div>
 
-        <!-- FAVORITOS -->
-        <div class="-space-y-5">
-            <div>
-                <h1 class=" text-[#622C05] font-extrabold translate-x-10 text-[20px]  ">
-                FAVORITOS
-            </h1>
-            </div>
-        
-               <!-- DIV QUE GUARDA TODOS OS CARDS FAVORITOS -->
-               <div class=" h-52 translate-y-7 space-x-12">
-                
-                <!-- cards -->
-        
-                <!-- lanche fav -->
-                <button>
-                     <div class="size-36 translate-x-7">
-        
-                    <img src="../img/coxinha.png" alt="imagem do card">
-        
-                    <article>
-                        <h1 class="text-center font-bold text-[#622C05]">
-                            Coxinha De Frango
-                        </h1>
-                        <p class="text-[11px] text-center font-medium gap-2 text-[#622c0599]">
-                            Peito de frango, azeite extra virgem, óleo de girassol, ovo pasteurizado, alho, salsinha fresca, sal rosa, orégano e especiarias.
-                        </p>
-                        <p class="text-[13px] text-center font-bold text-[#622C05]">
-                            R$ 3,00 Unid.
-                        </p>
-                    </article>
-        
-                </div>
-                </button>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="popup-produto-nome"></h2>
+            <img id="popup-produto-imagem" src="" alt="">
+            <p id="popup-produto-descricao"></p>
+            <p id="popup-produto-preco"></p>
         </div>
-        
-        </div>
-       
+    </div>
+
+
 </body>
 
 </html>
