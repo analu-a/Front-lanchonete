@@ -1,0 +1,18 @@
+
+/* Estilos para texto centralizado */
+.text-center {
+    text-align: center;
+}
+
+/* Estilos para o input */
+.input {
+    width: 85vh;
+    border: none;
+    border-bottom: 2px solid #FF9800; /* Laranja */
+    background-color: transparent;
+}
+
+/* Estilos para a checkbox */
+.size-8 {
+    /* Adicione seus estilos aqui */
+}

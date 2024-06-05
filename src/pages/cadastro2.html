@@ -1,14 +1,15 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../input.css" rel="stylesheet">
     <link href="../output.css" rel="stylesheet">
-    <link rel="stylesheet" href="/index.html">
-
+    <link rel="stylesheet" href="../js/cadastro2.js">
+    <title>Cadastro e Preferências</title>
 </head>
+
 
 
 <body class="bg-[#FDEDD5] flex items-center justify-center min-h-screen">
@@ -28,19 +29,19 @@
             <div class="space-y-5 self-center" style="transform: translateY(-20px);">
 
                 <!-- NOME -->
-                <input class=" w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
+                <input id="nome" class="w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
                     placeholder="Nome:" type="text">
 
                 <!-- E-MAIL -->
-                <input class=" w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
+                <input id="email" class="w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
                     placeholder="E-mail:" type="email">
 
                 <!-- ENDEREÇO -->
-                <input class=" w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
+                <input id="endereco" class="w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
                     placeholder="Endereço:" type="text">
 
                 <!-- TELEFONE -->
-                <input class=" w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
+                <input id="telefone" class="w-[85vh] placeholder-orange-950 input bg-transparent border-orange-950 border-b"
                     placeholder="Telefone:" type="tel">
 
             </div>
@@ -49,82 +50,75 @@
             <div class="space-y-10" style="transform: translateY(-5px);">
 
                 <h1 class="font-semibold text-orange-950 text-2xl">
-                    Suas preferencias
+                    Suas preferências
                 </h1>
 
             </div>
 
-            <div class="flex space-x-10 self-center">
+            <div id="preferencias" class="grid grid-cols-2 md:grid-cols-4 gap-4">
 
-            <div class="">
-                <input class="size-8 accent-[#2e220f]" type="checkbox" name="Frango" id="">
-                <p class="text-orange-950 font-semibold">Frango</p>
-            </div>
-
-            <div class="">
-                <input class="size-8 accent-[#2e220f]" type="checkbox" name="Ovos" id="">
-                <p class="text-orange-950 font-semibold">Ovos</p>
-            </div>
-
-            <div class="">
-                <input class="size-8 accent-[#2e220f]" type="checkbox" name="Salsicha" id="">
-                <p class="text-orange-950 font-semibold">Salsicha</p>
-            </div>
-
-            <div class="">
-                <input class="size-8 accent-[#2e220f]" type="checkbox" name="Queijo" id="">
-                <p class="text-orange-950 font-semibold">Queijo</p>
-            </div>
-
-            <div class="">
-                <input class="size-8 accent-[#2e220f]" type="checkbox" name="Carne" id="">
-                <p class="text-orange-950 font-semibold">Carne</p>
-            </div>
-
-
-            </div>
-           
-            
-            <div class="flex space-x-10 ">
-                <div class="">
-                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="Frango" id="">
-                    <p class="text-orange-950 font-semibold">Tomate</p>
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Frango">
+                    <label class="text-orange-950 font-semibold ml-2">Frango</label>
                 </div>
-    
-                <div class="">
-                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="Ovos" id="">
-                    <p class="text-orange-950 font-semibold">Picles</p>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Ovos">
+                    <label class="text-orange-950 font-semibold ml-2">Ovos</label>
                 </div>
-    
-                <div class="">
-                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="Salsicha" id="">
-                    <p class="text-orange-950 font-semibold">Alface</p>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Salsicha">
+                    <label class="text-orange-950 font-semibold ml-2">Salsicha</label>
                 </div>
-    
-                <div class="">
-                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="Queijo" id="">
-                    <p class="text-orange-950 font-semibold">Cebola</p>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Queijo">
+                    <label class="text-orange-950 font-semibold ml-2">Queijo</label>
                 </div>
-    
-                <div class="">
-                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="Carne" id="">
-                    <p class="text-orange-950 font-semibold">Pepino</p>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Carne">
+                    <label class="text-orange-950 font-semibold ml-2">Carne</label>
                 </div>
-        </div>
-        
-        <div>
-            <a href="./home.html">
-                <button class="bg-[#927c5bbd] rounded-md w-40 h-10 font-semibold" style="transform: translateY(50px);">
-                <p class="text-orange-950">
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Tomate">
+                    <label class="text-orange-950 font-semibold ml-2">Tomate</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Picles">
+                    <label class="text-orange-950 font-semibold ml-2">Picles</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Alface">
+                    <label class="text-orange-950 font-semibold ml-2">Alface</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Cebola">
+                    <label class="text-orange-950 font-semibold ml-2">Cebola</label>
+                </div>
+
+                <div class="flex items-center">
+                    <input class="size-8 accent-[#2e220f]" type="checkbox" name="ingredientes[]" value="Pepino">
+                    <label class="text-orange-950 font-semibold ml-2">Pepino</label>
+                </div>
+            </div>
+
+            <div>
+                <button id="submitBtn" class="bg-[#927c5bbd] rounded-md w-40 h-10 font-semibold" style="transform: translateY(20px);">
                     Prosseguir
-                </p>
-            </button>
-            </a>
-            
-        </div>
+                </button>
+            </div>
 
         </div>
 
+    </div>
+
+    <script src="script.js"></script>
 
 
 </body>
