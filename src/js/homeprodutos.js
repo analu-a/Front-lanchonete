@@ -1,4 +1,5 @@
-// js/homeprodutos.js
+document.addEventListener('DOMContentLoaded', init);
+
 function init() {
     const novidadesContainer = document.getElementById('novidades');
     const favoritosContainer = document.getElementById('favoritos');
@@ -74,62 +75,40 @@ function init() {
         return card;
     };
 
-
-    // Limpa os contêineres para evitar duplicação
+    // Limpa os containers antes de adicionar os produtos
     novidadesContainer.innerHTML = '';
     favoritosContainer.innerHTML = '';
 
-    // Adiciona os produtos de novidades ao container
+    // Adiciona os produtos aos containers
     novidades.forEach(product => {
         const productCard = createProductCard(product);
         novidadesContainer.appendChild(productCard);
     });
 
-    // Adiciona os produtos favoritos ao container
     favoritos.forEach(product => {
         const productCard = createProductCard(product);
         favoritosContainer.appendChild(productCard);
     });
 }
 
-// Chama a função init quando o DOM estiver totalmente carregado
-document.addEventListener('DOMContentLoaded', init);
-
-// Função para adicionar um produto ao carrinho
 function adicionarProdutoAoCarrinho() {
-    // Obter informações do produto do popup
     const nome = document.getElementById('popup-produto-nome').textContent;
     const descricao = document.getElementById('popup-produto-descricao').textContent;
     const preco = document.getElementById('popup-produto-preco').textContent;
+    const imagem = document.getElementById('popup-produto-imagem').src;
 
-    // Chamar a função para adicionar ao carrinho
-    adicionarAoCarrinho(nome, descricao, preco);
+    const produto = { nome, descricao, preco, imagem };
+
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+    carrinho.push(produto);
+
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+    // Redireciona para a página de pedidos
+    window.location.href = 'pedidos.html';
 }
 
-// Função para adicionar um produto aos pedidos
-function adicionarAoCarrinho(nome, descricao, preco) {
-    const pedidosContainer = document.getElementById('pedidos-container');
-
-    // Criar um novo card de pedido
-    const cardPedido = document.createElement('div');
-    cardPedido.classList.add('bg-[#622c05]', 'h-28', 'w-[180vh]', 'rounded-lg', 'translate-x-10', 'flex', 'items-center', 'mb-8');
-
-    // Conteúdo do card de pedido
-    cardPedido.innerHTML = `
-        <img src="../img/tortamorango.png" alt="img do card de pedidos" class="size-[90px]" style="transform: translate(10px) translateY(10px)">
-        <article class="p-5 text-white ">
-            <h1 class="font-medium space-y-4">${nome}</h1>
-            <p class="text-orange-50">${descricao}</p>
-            <p>${preco}</p>
-        </article>
-    `;
-
-    // Adicionar o card de pedido ao contêiner
-    pedidosContainer.appendChild(cardPedido);
-}
-
-
-// Função para abrir o popup com as informações do produto
 function openPopup(product) {
     document.getElementById('popup-produto-nome').textContent = product.nome;
     document.getElementById('popup-produto-imagem').src = product.imagem;
@@ -138,44 +117,6 @@ function openPopup(product) {
     document.getElementById('popup').style.display = 'block';
 }
 
-// Função para fechar o popup
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
-
-// Função para adicionar um produto ao carrinho
-function adicionarProdutoAoCarrinho() {
-    // Obter informações do produto do popup
-    const nome = document.getElementById('popup-produto-nome').textContent;
-    const descricao = document.getElementById('popup-produto-descricao').textContent;
-    const preco = document.getElementById('popup-produto-preco').textContent;
-
-    // Chamar a função para adicionar ao carrinho
-    adicionarAoCarrinho(nome, descricao, preco);
-}
-
-// Função para adicionar um produto aos pedidos
-function adicionarAoCarrinho(nome, descricao, preco) {
-    const pedidosContainer = document.getElementById('pedidos-container');
-
-    // Criar um novo card de pedido
-    const cardPedido = document.createElement('div');
-    cardPedido.classList.add('bg-[#622c05]', 'h-28', 'w-[180vh]', 'rounded-lg', 'translate-x-10', 'flex', 'items-center', 'mb-8');
-
-    // Conteúdo do card de pedido
-    cardPedido.innerHTML = `
-        <img src="../img/tortamorango.png" alt="img do card de pedidos" class="size-[90px]" style="transform: translate(10px) translateY(10px)">
-        <article class="p-5 text-white ">
-            <h1 class="font-medium space-y-4">${nome}</h1>
-            <p class="text-orange-50">${descricao}</p>
-            <p>${preco}</p>
-        </article>
-    `;
-
-    // Adicionar o card de pedido ao contêiner
-    pedidosContainer.appendChild(cardPedido);
-}
-
-
-// Chama a função init quando o DOM estiver totalmente carregado
-document.addEventListener('DOMContentLoaded', init);

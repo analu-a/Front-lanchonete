@@ -1,21 +1,40 @@
-// Função para adicionar um produto aos pedidos
-function adicionarAoCarrinho(nome, descricao, preco) {
+document.addEventListener('DOMContentLoaded', () => {
     const pedidosContainer = document.getElementById('pedidos-container');
 
-    // Criar um novo card de pedido
-    const cardPedido = document.createElement('div');
-    cardPedido.classList.add('bg-[#622c05]', 'h-28', 'w-[180vh]', 'rounded-lg', 'translate-x-10', 'flex', 'items-center', 'mb-8');
+    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
-    // Conteúdo do card de pedido
-    cardPedido.innerHTML = `
-        <img src="../img/tortamorango.png" alt="img do card de pedidos" class="size-[90px]" style="transform: translate(10px) translateY(10px)">
-        <article class="p-5 text-white ">
-            <h1 class="font-medium space-y-4">${nome}</h1>
-            <p class="text-orange-50">${descricao}</p>
-            <p>${preco}</p>
-        </article>
-    `;
+    const createPedidoCard = (product, index) => {
+        const card = document.createElement('div');
+        card.classList.add('bg-[#622c05]', 'h-28', 'w-[180vh]', 'rounded-lg', 'translate-x-10', 'flex', 'items-center', 'mb-8');
 
-    // Adicionar o card de pedido ao contêiner
-    pedidosContainer.appendChild(cardPedido);
-}
+        card.innerHTML = `
+            <img src="${product.imagem}" alt="img do card de pedidos" class="size-[90px]" style="transform: translate(10px)">
+            <article class="p-5 text-white ">
+                <h1 class="font-medium space-y-4">${product.nome}</h1>
+                <p class="text-orange-50">${product.descricao}</p>
+                <p>${product.preco}</p>
+            </article>
+            <button class="ml-auto mr-5 bg-orange-800 text-white px-3 py-1 rounded" onclick="removerPedido(${index})">Excluir pedido</button>
+        `;
+
+        return card;
+    };
+
+    const removerPedido = (index) => {
+        carrinho.splice(index, 1);
+        localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        carregarPedidos();
+    };
+
+    const carregarPedidos = () => {
+        pedidosContainer.innerHTML = '';
+        carrinho.forEach((product, index) => {
+            const pedidoCard = createPedidoCard(product, index);
+            pedidosContainer.appendChild(pedidoCard);
+        });
+    };
+
+    carregarPedidos();
+
+    window.removerPedido = removerPedido;
+});

@@ -1,4 +1,4 @@
-/* Adicione aqui os estilos personalizados */
+
 
 #contato-form label {
     display: flex;
@@ -6,8 +6,8 @@
     justify-content: center;
     background-color: white;
     border-radius: 50%;
-    width: 96px; /* 24 * 4 (Tailwind class: w-24) */
-    height: 96px; /* 24 * 4 (Tailwind class: h-24) */
+    width: 96px; 
+    height: 96px; 
     cursor: pointer;
 }
 

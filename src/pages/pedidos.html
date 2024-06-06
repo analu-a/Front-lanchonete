@@ -4,51 +4,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seus Pedidos</title>
+    <link href="../homeprodutos.css" rel="stylesheet">
     <link href="../input.css" rel="stylesheet">
     <link href="../output.css" rel="stylesheet">
-    <script src="../js/homeprodutos.js" defer></script>
-    <script src="../js/pedidos.js"defer></script>
-    <title>Meus Pedidos</title>
+    <link rel="stylesheet" href="../popup.css">
 </head>
 
-<body class="bg-[#FDEDD5] overflow-x-hidden">
+<body class="bg-[#ffeed3] overflow-x-hidden">
 
-    <header class="flex bg-[#622c05] w-[210vh] h-[9vh] self-center space-y-10">
+    <header class="flex bg-[#622c05] w-full h-[9vh] items-center">
 
-        <h1 class="font-bold text-[#FDEDD5] bg-center self-center text-center text-2xl translate-x-[95vh]">
-            Meus pedidos
-        </h1>
+        <a href="./home.html">
+         <img class="size-16 ml-2" src="../img/logo.png" alt="logo">   
+        </a>
+        
 
+
+        <nav class="flex-1 flex justify-around">
+            <a href="cardapio.html" class="text-white font-bold">Cardápio</a>
+            <a href="quemsomos.html" class="text-white font-bold">Quem somos</a>
+            <a href="promocoes.html" class="text-white font-bold">Promoções</a>
+            <a href="pedidos.html" class="text-white font-bold">Seus Pedidos</a>
+        </nav>
+
+        <a href="./pefiilusuario.html">
+            <img class="mr-4" src="../img/perfil.png" alt="foto-perfil">
+        </a>
     </header>
 
-    <div class="py-12 p-24">
+    <h1 class="text-[#622c05] text-3xl text-center font-semibold p-5" style="transform: translateY(20px);">Seus Pedidos</h1>
 
-        <div class="bg-[#622c05] h-28 w-[180vh] rounded-lg translate-x-10 flex">
+    <div id="pedidos-container" class="p-14 bg-center"></div>
 
-            <div class="flex">
-
-                <img src="../img/tortamorango.png" alt="img do card de pedidos" class="size-[90px]"
-                    style="transform: translate(10px) translateY(10px)">
-
-                <article class="p-5 text-white ">
-                    <h1 class="font-medium space-y-4">
-                        Torta De Morango
-                    </h1>
-                    <p class="text-orange-50">
-                        Deliciosa torta recheada com creme belga e suculentos morangos por cima.
-                    </p>
-                    <p class="">
-                        R$ 19,90
-                    </p>
-                </article>
-
-
-            </div>
-
-        </div>
-
-    </div>
-
+    <script src="../js/pedidos.js" defer></script>
 </body>
 
 </html>

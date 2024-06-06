@@ -1,8 +1,8 @@
-/* CSS para o design do site */
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0; /* Removendo a margem padrão do body */
-    background-color: #ffeed3; /* Definindo a cor de fundo da tela */
+    margin: 0;
+    background-color: #ffeed3;
 }
 
 .header {
@@ -11,7 +11,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px; /* Adicionando padding para dar espaço nos lados */
+    padding: 0 20px; 
+    
 }
 
 .header img {
@@ -37,7 +38,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px; /* Adicionando padding para dar espaço nos lados */
+    padding: 0 20px; 
 }
 
 .banner img {
@@ -53,16 +54,16 @@ body {
     color: #622C05;
     font-weight: bold;
     font-size: 20px;
-    margin-left: 20px; /* Adicionando espaço à esquerda */
+    margin-left: 20px; 
 }
 
 .card-container {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    justify-content: flex-start; /* Alinhando os cards no canto esquerdo */
-    padding-left: 20px; /* Adicionando espaço à esquerda */
-    margin-top: 20px; /* Adicionando espaço acima dos cards */
+    justify-content: flex-start;
+    padding-left: 20px; 
+    margin-top: 20px; 
 }
 
 .card {
@@ -71,8 +72,8 @@ body {
     align-items: center;
     margin: 10px;
     width: 200px;
-    padding: 10px; /* Adicionando espaço interno nos cards */
-    border-radius: 5px; /* Adicionando borda arredondada */
+    padding: 10px; 
+    border-radius: 5px; 
 }
 
 .card img {
@@ -85,14 +86,14 @@ body {
     color: #622C05;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 10px; /* Adicionando espaço abaixo do título */
+    margin-bottom: 10px; 
 }
 
 .card p {
     font-size: 12px;
     color: #622c0599;
     text-align: center;
-    margin-bottom: 10px; /* Adicionando espaço abaixo do texto */
+    margin-bottom: 10px;
     word-wrap: break-word;
 }
 
@@ -100,16 +101,16 @@ body {
     font-size: 13px;
     color: #622C05;
     font-weight: bold;
-    margin-bottom: 10px; /* Adicionando espaço abaixo do preço */
+    margin-bottom: 10px;
 }
 
 .card button {
-    background-color: transparent; /* Tornando o botão transparente */
+    background-color: transparent; 
     border: none;
     cursor: pointer;
-    outline: none; /* Removendo a borda de foco do botão */
+    outline: none;
 }
 
 .card button:focus {
-    outline: none; /* Removendo a borda de foco do botão quando estiver focado */
+    outline: none;
 }
