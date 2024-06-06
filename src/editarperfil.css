@@ -17,8 +17,7 @@
 
 #foto-preview {
     object-fit: cover;
-    width: 96px;
-    height: 96px;
+    size: 100%;
     border-radius: 50%;
 }
 

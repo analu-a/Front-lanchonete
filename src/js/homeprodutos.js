@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', () => {
+// js/homeprodutos.js
+function init() {
     const novidadesContainer = document.getElementById('novidades');
     const favoritosContainer = document.getElementById('favoritos');
 
@@ -18,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
             preco: 'R$ 29,50',
             imagem: 'https://via.placeholder.com/150' // Exemplo de URL válida
         }
-        
     ];
 
     const favoritos = [
@@ -66,8 +66,14 @@ document.addEventListener('DOMContentLoaded', () => {
         card.appendChild(img);
         card.appendChild(article);
 
+        // Adiciona evento de clique ao card
+        card.addEventListener('click', () => {
+            openPopup(product);
+        });
+
         return card;
     };
+
 
     // Limpa os contêineres para evitar duplicação
     novidadesContainer.innerHTML = '';
@@ -84,65 +90,44 @@ document.addEventListener('DOMContentLoaded', () => {
         const productCard = createProductCard(product);
         favoritosContainer.appendChild(productCard);
     });
+}
 
-    // Função para abrir o popup com as informações do produto
-    const openPopup = (product) => {
-        const popup = document.createElement('div');
-        popup.classList.add('popup');
+// Chama a função init quando o DOM estiver totalmente carregado
+document.addEventListener('DOMContentLoaded', init);
 
-        const overlay = document.createElement('div');
-        overlay.classList.add('popup-overlay');
+// Função para adicionar um produto ao carrinho
+function adicionarProdutoAoCarrinho() {
+    // Obter informações do produto do popup
+    const nome = document.getElementById('popup-produto-nome').textContent;
+    const descricao = document.getElementById('popup-produto-descricao').textContent;
+    const preco = document.getElementById('popup-produto-preco').textContent;
 
-        const content = document.createElement('div');
-        content.classList.add('popup-content');
+    // Chamar a função para adicionar ao carrinho
+    adicionarAoCarrinho(nome, descricao, preco);
+}
 
-        const closeBtn = document.createElement('span');
-        closeBtn.classList.add('close-btn');
-        closeBtn.textContent = 'Fechar';
-        closeBtn.addEventListener('click', () => {
-            popup.remove();
-        });
+// Função para adicionar um produto aos pedidos
+function adicionarAoCarrinho(nome, descricao, preco) {
+    const pedidosContainer = document.getElementById('pedidos-container');
 
-        const img = document.createElement('img');
-        img.src = product.imagem;
-        img.alt = `imagem do ${product.nome}`;
+    // Criar um novo card de pedido
+    const cardPedido = document.createElement('div');
+    cardPedido.classList.add('bg-[#622c05]', 'h-28', 'w-[180vh]', 'rounded-lg', 'translate-x-10', 'flex', 'items-center', 'mb-8');
 
-        const productName = document.createElement('h2');
-        productName.textContent = product.nome;
+    // Conteúdo do card de pedido
+    cardPedido.innerHTML = `
+        <img src="../img/tortamorango.png" alt="img do card de pedidos" class="size-[90px]" style="transform: translate(10px) translateY(10px)">
+        <article class="p-5 text-white ">
+            <h1 class="font-medium space-y-4">${nome}</h1>
+            <p class="text-orange-50">${descricao}</p>
+            <p>${preco}</p>
+        </article>
+    `;
 
-        const productDescription = document.createElement('p');
-        productDescription.textContent = product.descricao;
+    // Adicionar o card de pedido ao contêiner
+    pedidosContainer.appendChild(cardPedido);
+}
 
-        const productPrice = document.createElement('p');
-        productPrice.textContent = product.preco;
-
-        content.appendChild(closeBtn);
-        content.appendChild(img);
-        content.appendChild(productName);
-        content.appendChild(productDescription);
-        content.appendChild(productPrice);
-
-        popup.appendChild(overlay);
-        popup.appendChild(content);
-
-        document.body.appendChild(popup);
-    };
-
-    // Adicionar evento de clique aos elementos dos produtos para abrir o popup
-    novidadesContainer.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('click', () => {
-            const productIndex = Array.from(novidadesContainer.children).indexOf(card);
-            openPopup(novidades[productIndex]);
-        });
-    });
-
-    favoritosContainer.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('click', () => {
-            const productIndex = Array.from(favoritosContainer.children).indexOf(card);
-            openPopup(favoritos[productIndex]);
-        });
-    });
-});
 
 // Função para abrir o popup com as informações do produto
 function openPopup(product) {
@@ -157,3 +142,40 @@ function openPopup(product) {
 function closePopup() {
     document.getElementById('popup').style.display = 'none';
 }
+
+// Função para adicionar um produto ao carrinho
+function adicionarProdutoAoCarrinho() {
+    // Obter informações do produto do popup
+    const nome = document.getElementById('popup-produto-nome').textContent;
+    const descricao = document.getElementById('popup-produto-descricao').textContent;
+    const preco = document.getElementById('popup-produto-preco').textContent;
+
+    // Chamar a função para adicionar ao carrinho
+    adicionarAoCarrinho(nome, descricao, preco);
+}
+
+// Função para adicionar um produto aos pedidos
+function adicionarAoCarrinho(nome, descricao, preco) {
+    const pedidosContainer = document.getElementById('pedidos-container');
+
+    // Criar um novo card de pedido
+    const cardPedido = document.createElement('div');
+    cardPedido.classList.add('bg-[#622c05]', 'h-28', 'w-[180vh]', 'rounded-lg', 'translate-x-10', 'flex', 'items-center', 'mb-8');
+
+    // Conteúdo do card de pedido
+    cardPedido.innerHTML = `
+        <img src="../img/tortamorango.png" alt="img do card de pedidos" class="size-[90px]" style="transform: translate(10px) translateY(10px)">
+        <article class="p-5 text-white ">
+            <h1 class="font-medium space-y-4">${nome}</h1>
+            <p class="text-orange-50">${descricao}</p>
+            <p>${preco}</p>
+        </article>
+    `;
+
+    // Adicionar o card de pedido ao contêiner
+    pedidosContainer.appendChild(cardPedido);
+}
+
+
+// Chama a função init quando o DOM estiver totalmente carregado
+document.addEventListener('DOMContentLoaded', init);
