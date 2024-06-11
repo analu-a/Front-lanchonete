@@ -8,38 +8,26 @@
     <link href="../output.css" rel="stylesheet">
     <link rel="stylesheet" href="../product.css">
     <link rel="stylesheet" href="../cardapio.css">
-    <script src="../js/cardapio.js"></script>
-    <script src="../js/homeprodutos.js" defer></script>
-    <link rel="import" href="../popup.css">
+    <link rel="stylesheet" href="../popup.css">
+    <script src="../js/cardapio.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
-
 </head>
 
 <body class="bg-[#FDEDD5] overflow-x-hidden">
-
     <header class="flex bg-[#622C05] w-[210vh] h-[9vh] self-center">
-
         <a href="./home.html">
-
             <img src="../img/logo.png" alt="logo" class="">
-
         </a>
-
-
-        <h1 class="self-center translate-x-10 font-medium text-2xl text-[#FDEDD5]">
-            Cardápio
-        </h1>
-
+        <h1 class="self-center translate-x-10 font-medium text-2xl text-[#FDEDD5]">Cardápio</h1>
+        <a href="./pedidos.html">
+            <h1 class="self-center translate-x-10 font-medium text-2xl text-[#FDEDD5]" style="transform: translate(100px) translateY(25px);">Seus pedidos</h1>
+        </a>
     </header>
 
-
     <div class="flex">
-
-
         <div class="h-screen w-screen bg-[#FDEDD5] grid p-10 space-y-10 self-center">
-
             <nav class="bg-[#622c056b] fixed flex flex-col rounded-3xl items-start nav z-10 left-16 top-20">
                 <img src="../img/burguer (2).png" alt="burger-icon" onclick="filtrarCategoria('hamburguer')">
                 <img src="../img/drink (1).png" alt="drink-icon" onclick="filtrarCategoria('bebida')">
@@ -86,15 +74,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Estrutura do Carrinho -->
-    <div id="carrinho" class="carrinho">
-        <h2>Carrinho de Compras</h2>
-        <ul id="lista-carrinho" class="lista-carrinho"></ul>
-        <button onclick="limparCarrinho()">Limpar Carrinho</button>
-    </div>
-
-    <script src="../js/cardapio.js"></script>
 
 </body>
 
