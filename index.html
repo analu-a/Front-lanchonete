@@ -1,49 +1,69 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./src/input.css" rel="stylesheet">
     <link href="./src/output.css" rel="stylesheet">
-    <link href="./src/input.css" rel="stylesheet" >
-    
+    <link rel="stylesheet" href="./src/pages/home.html">
+    <style>
+        body {
+            background-color: #FDEDD5;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Isso vai garantir que a altura da página ocupe toda a tela */
+            margin: 0; /* Remover margens padrão */
+            padding: 0; /* Remover padding padrão */
+        }
 
+        .content {
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: 50px; /* Ajustar a margem superior conforme necessário */
+        }
+
+        .button-container a {
+            display: inline-block;
+            background-color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .button-container a button {
+            font-size: 20px;
+            font-weight: bold;
+            color: white;
+            background-color: #86765D;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
-<body class="bg-[#FDEDD5] overflow-x-hidden">
+<body>
 
-    <div>
-        <article class="text-center self-center ">
-         <h1 class="font-thin font-extrabold text-center p-80 text-6xl text-[#86765D]">
-        BEM VINDOS
-    </h1>
+    <div class="content">
+        <h1 class="font-thin font-extrabold text-center text-6xl text-[#86765D]">BEM VINDOS</h1>
 
-    <div class="-translate-y-56">
- <p class="font-mono space-y-10 -translate-y-100">
-        Venha mergulhar em um mundo de sabor e felicidade conosco!!!
-    </p>
+        <p class="font-mono space-y-10">
+            Venha mergulhar em um mundo de sabor e felicidade conosco!!!
+        </p>
 
-    <div class="space-y-16">
-        <a href="./home.html" class=" bg-white h-[4vh] w-[15vh] rounded-[10px]">
-            <button class="flex items-center justify-center text-2xl font-medium rounded-md text-white bg-[#86765D]">
-                Entrar
-            </button>
-        </a>
+        <div class="button-container">
+            <a href="./src/pages/home.html">
+                <button>Entrar</button>
+            </a>
+        </div>
     </div>
-   
 
-    </div>
-   
-
-    </article>
-
-    
-    </div>
-    
-    
-   
-    
-       
 </body>
 
 </html>
