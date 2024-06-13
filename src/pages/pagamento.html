@@ -4,24 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seus Pedidos</title>
+    <title>Pagamento</title>
     <link href="../homeprodutos.css" rel="stylesheet">
     <link href="../input.css" rel="stylesheet">
     <link href="../output.css" rel="stylesheet">
+    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="../popup.css">
-
-    <style>
-        .button-container {
-            display: flex;
-            justify-content: center;
-            margin-top: -20px; /* Margem negativa para mover para cima */
-            margin-bottom: 20px; /* Margem inferior para separar do conteúdo abaixo */
-        }
-
-        .button-container button {
-            margin: 0 10px; /* Ajuste a margem lateral conforme necessário */
-        }
-    </style>
 </head>
 
 <body class="bg-[#ffeed3] overflow-x-hidden">
@@ -41,25 +29,24 @@
         </a>
     </header>
 
-    <h1 class="text-[#622c05] text-3xl text-center font-semibold p-5" style="transform: translateY(20px);">Seus Pedidos</h1>
+    <h1 class="text-[#622c05] text-3xl text-center font-semibold p-5" style="transform: translateY(20px);">Pagamento</h1>
 
-    <div id="pedidos-container" class="p-14 bg-center self-center"></div>
+    <div id="pagamento-container" class="p-14 bg-center"></div>
+    <div id="total-container" class="text-center text-[#622c05] text-xl"></div>
 
-    <div class="button-container">
-        <button id="limpar-carrinho-btn" class="bg-orange-800 text-white px-4 py-2 rounded">Limpar Carrinho</button>
-        <button id="prosseguir-btn" class="bg-orange-800 text-white px-4 py-2 rounded">Prosseguir para Pagamento</button>
-    </div>
+    <button id="finalizar-pagamento-btn" class="fixed bottom-10 right-10 bg-orange-800 text-white px-4 py-2 rounded">Finalizar Pagamento</button>
 
+    <!-- Popup de confirmação -->
     <div id="popup-confirmacao" class="popup">
         <div class="popup-content">
             <span class="close-btn" onclick="fecharPopupConfirmacao()">&times;</span>
-            <p>Você deseja realmente finalizar o pedido?</p>
-            <button id="cancelar-btn" class="bg-red-500 text-white px-4 py-2 rounded">Cancelar</button>
-            <button id="finalizar-btn" class="bg-green-500 text-white px-4 py-2 rounded">Finalizar</button>
+            <p>Deseja realmente finalizar o pedido?</p>
+            <button class="bg-orange-200 rounded-md font-medium" id="finalizar-btn">Finalizar</button>
+            <button class="bg-orange-200 rounded-md" id="cancelar-btn">Cancelar</button>
         </div>
     </div>
 
-    <script src="../js/pedidos.js" defer></script>
+    <script src="../js/pagamento.js" defer></script>
 </body>
 
 </html>

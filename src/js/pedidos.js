@@ -1,5 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const pedidosContainer = document.getElementById('pedidos-container');
+    const limparCarrinhoBtn = document.getElementById('limpar-carrinho-btn');
+    const prosseguirBtn = document.getElementById('prosseguir-btn');
+    const popupConfirmacao = document.getElementById('popup-confirmacao');
 
     let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
 
@@ -26,13 +29,52 @@ document.addEventListener('DOMContentLoaded', () => {
         carregarPedidos();
     };
 
+    const limparCarrinho = () => {
+        localStorage.removeItem('carrinho');
+        carrinho = [];
+        carregarPedidos();
+    };
+
     const carregarPedidos = () => {
         pedidosContainer.innerHTML = '';
-        carrinho.forEach((product, index) => {
-            const pedidoCard = createPedidoCard(product, index);
-            pedidosContainer.appendChild(pedidoCard);
-        });
+        if (carrinho.length === 0) {
+            pedidosContainer.innerHTML = '<p class="text-center text-[#622c05] text-xl">Seu carrinho está vazio.</p>';
+        } else {
+            carrinho.forEach((product, index) => {
+                const pedidoCard = createPedidoCard(product, index);
+                pedidosContainer.appendChild(pedidoCard);
+            });
+        }
     };
+
+    const abrirPopupConfirmacao = () => {
+        popupConfirmacao.style.display = 'block';
+    };
+
+    const fecharPopupConfirmacao = () => {
+        popupConfirmacao.style.display = 'none';
+    };
+
+    const finalizarPedido = () => {
+        alert('Pedido finalizado com sucesso!');
+        fecharPopupConfirmacao();
+    };
+
+    limparCarrinhoBtn.addEventListener('click', limparCarrinho);
+
+    prosseguirBtn.addEventListener('click', () => {
+        if (carrinho.length > 0) {
+            localStorage.setItem('carrinhoParaPagamento', JSON.stringify(carrinho));
+            console.log('Produtos no carrinhoParaPagamento:', JSON.parse(localStorage.getItem('carrinhoParaPagamento')));
+            window.location.href = 'pagamento.html';
+        } else {
+            alert('Seu carrinho está vazio.');
+        }
+    });
+
+    document.getElementById('cancelar-btn').addEventListener('click', fecharPopupConfirmacao);
+
+    document.getElementById('finalizar-btn').addEventListener('click', finalizarPedido);
 
     carregarPedidos();
 

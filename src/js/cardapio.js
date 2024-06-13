@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const popupDescricao = document.getElementById('popup-produto-descricao');
     const popupPreco = document.getElementById('popup-produto-preco');
     const popupImagem = document.getElementById('popup-produto-imagem');
-    const btnAdicionarCarrinho = document.getElementById('popup-adicionar-carrinho');
 
     function openPopup(produto) {
         popupNome.textContent = produto.nome;
@@ -45,13 +44,6 @@ document.addEventListener('DOMContentLoaded', function() {
         popup.style.display = 'none';
     }
 
-    btnAdicionarCarrinho.addEventListener('click', function() {
-        adicionarProdutoAoCarrinho();
-        closePopup();
-    });
-
-    const carrinho = [];
-
     function adicionarProdutoAoCarrinho() {
         const produto = {
             nome: popupNome.textContent,
@@ -59,30 +51,34 @@ document.addEventListener('DOMContentLoaded', function() {
             preco: popupPreco.textContent,
             imagem: popupImagem.src
         };
-        carrinho.push(produto);
-        atualizarCarrinho();
+        // Aqui você pode adicionar o produto ao carrinho
+        closePopup();
     }
 
-    function atualizarCarrinho() {
-        const listaCarrinho = document.getElementById('lista-carrinho');
-        listaCarrinho.innerHTML = '';
-        carrinho.forEach(produto => {
-            const itemCarrinho = document.createElement('li');
-            itemCarrinho.textContent = `${produto.nome} - ${produto.preco}`;
-            listaCarrinho.appendChild(itemCarrinho);
+    document.querySelectorAll('.product-box').forEach((box, index) => {
+        box.addEventListener('click', () => {
+            openPopup(produtos[index]);
         });
-    }
-
-    function limparCarrinho() {
-        carrinho.length = 0;
-        atualizarCarrinho();
-    }
-
-    const novidadesContainer = document.getElementById('novidades');
-    const favoritosContainer = document.getElementById('favoritos');
-
-    produtos.forEach(produto => {
-        const cardProduto = createProductCard(produto);
-        novidadesContainer.appendChild(cardProduto);
     });
+
+    document.querySelector('.close-btn').addEventListener('click', closePopup);
+    document.querySelector('.add-to-cart-btn').addEventListener('click', adicionarProdutoAoCarrinho);
 });
+
+function adicionarProdutoAoCarrinho() {
+    const nome = document.getElementById('popup-produto-nome').textContent;
+    const descricao = document.getElementById('popup-produto-descricao').textContent;
+    const preco = document.getElementById('popup-produto-preco').textContent;
+    const imagem = document.getElementById('popup-produto-imagem').src;
+
+    const produto = { nome, descricao, preco, imagem };
+
+    const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+    carrinho.push(produto);
+
+    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+
+    // Redireciona para a página de pedidos
+    window.location.href = 'pedidos.html';
+}
